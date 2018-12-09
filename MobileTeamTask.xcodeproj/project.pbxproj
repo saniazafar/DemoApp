@@ -8,24 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		1A8839CF21BCEDD20048EE45 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8839CE21BCEDD20048EE45 /* AppDelegate.m */; };
-		1A8839D221BCEDD20048EE45 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8839D121BCEDD20048EE45 /* ViewController.m */; };
+		1A8839D221BCEDD20048EE45 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8839D121BCEDD20048EE45 /* AddViewController.m */; };
 		1A8839D521BCEDD20048EE45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A8839D321BCEDD20048EE45 /* Main.storyboard */; };
 		1A8839D721BCEDD20048EE45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A8839D621BCEDD20048EE45 /* Assets.xcassets */; };
 		1A8839DA21BCEDD20048EE45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A8839D821BCEDD20048EE45 /* LaunchScreen.storyboard */; };
 		1A8839DD21BCEDD20048EE45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8839DC21BCEDD20048EE45 /* main.m */; };
+		1A8839E521BCEEA50048EE45 /* MobileTeamTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8839E421BCEEA50048EE45 /* MobileTeamTableViewController.m */; };
+		1A8839EB21BD3AA30048EE45 /* MobileTeamMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8839EA21BD3AA30048EE45 /* MobileTeamMember.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A8839CA21BCEDD20048EE45 /* MobileTeamTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileTeamTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A8839CD21BCEDD20048EE45 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1A8839CE21BCEDD20048EE45 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1A8839D021BCEDD20048EE45 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1A8839D121BCEDD20048EE45 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1A8839D021BCEDD20048EE45 /* AddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		1A8839D121BCEDD20048EE45 /* AddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		1A8839D421BCEDD20048EE45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A8839D621BCEDD20048EE45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A8839D921BCEDD20048EE45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A8839DB21BCEDD20048EE45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A8839DC21BCEDD20048EE45 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1A8839E321BCEEA50048EE45 /* MobileTeamTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobileTeamTableViewController.h; sourceTree = "<group>"; };
+		1A8839E421BCEEA50048EE45 /* MobileTeamTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileTeamTableViewController.m; sourceTree = "<group>"; };
+		1A8839E921BD3AA30048EE45 /* MobileTeamMember.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobileTeamMember.h; sourceTree = "<group>"; };
+		1A8839EA21BD3AA30048EE45 /* MobileTeamMember.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileTeamMember.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +66,13 @@
 			children = (
 				1A8839CD21BCEDD20048EE45 /* AppDelegate.h */,
 				1A8839CE21BCEDD20048EE45 /* AppDelegate.m */,
-				1A8839D021BCEDD20048EE45 /* ViewController.h */,
-				1A8839D121BCEDD20048EE45 /* ViewController.m */,
+				1A8839D021BCEDD20048EE45 /* AddViewController.h */,
+				1A8839D121BCEDD20048EE45 /* AddViewController.m */,
 				1A8839D321BCEDD20048EE45 /* Main.storyboard */,
+				1A8839E921BD3AA30048EE45 /* MobileTeamMember.h */,
+				1A8839EA21BD3AA30048EE45 /* MobileTeamMember.m */,
+				1A8839E321BCEEA50048EE45 /* MobileTeamTableViewController.h */,
+				1A8839E421BCEEA50048EE45 /* MobileTeamTableViewController.m */,
 				1A8839D621BCEDD20048EE45 /* Assets.xcassets */,
 				1A8839D821BCEDD20048EE45 /* LaunchScreen.storyboard */,
 				1A8839DB21BCEDD20048EE45 /* Info.plist */,
@@ -141,9 +151,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A8839D221BCEDD20048EE45 /* ViewController.m in Sources */,
+				1A8839E521BCEEA50048EE45 /* MobileTeamTableViewController.m in Sources */,
+				1A8839D221BCEDD20048EE45 /* AddViewController.m in Sources */,
 				1A8839DD21BCEDD20048EE45 /* main.m in Sources */,
 				1A8839CF21BCEDD20048EE45 /* AppDelegate.m in Sources */,
+				1A8839EB21BD3AA30048EE45 /* MobileTeamMember.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

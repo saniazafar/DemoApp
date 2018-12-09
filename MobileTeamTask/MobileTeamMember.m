@@ -1,15 +1,16 @@
 //
-//  ViewController.h
+//  MobileTeamMember.m
 //  MobileTeamTask
 //
 //  Created by Sania Zafar on 12/9/18.
 //  Copyright © 2018 Sania Zafar. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MobileTeamMember.h"
 
-@interface ViewController : UIViewController
+@implementation MobileTeamMember
 
+@synthesize name;
+@synthesize genderAndDob;
 
 @end
-
