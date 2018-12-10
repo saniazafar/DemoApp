@@ -11,42 +11,40 @@
 
 @interface AddViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *firstName;
+@property (weak, nonatomic) IBOutlet UITextField *lastName;
+@property (weak, nonatomic) IBOutlet UISwitch *genderSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *genderLabel;
+@property (weak, nonatomic) IBOutlet UIDatePicker *DOB;
+
 @end
 
 @implementation AddViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
+
+
+#pragma mark - Action
 
 - (IBAction)addMe:(id)sender {
     if(_firstName.text.length > 0 && _lastName.text.length > 0) {
-        
-        NSLog(@"%@ bb ", self.DOB.date);
-
         MobileTeamMember *teamMember = [[MobileTeamMember alloc] init];
-        //teamMember.name = [_firstName.text stringByAppendingString:_lastName.text];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"dd MMM yyyy"];
         NSString *dateString = [dateFormatter stringFromDate:_DOB.date];
-        //teamMember.genderAndDob = [_genderLabel.text stringByAppendingString:dateString];
+        [teamMember setTeamMember:[NSString stringWithFormat:@"%@ %@",self.firstName.text, self.lastName.text] withGender:_genderLabel.text DateofBirth:dateString];
         [self.delegate newMemberAdded:teamMember];
-         
-        
+        [self.navigationController popViewControllerAnimated:TRUE];
     }
     else {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Please Enter all the fields" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    [alertController addAction:okAction];
-    [self presentViewController:alertController animated:YES completion:nil];
+        [self showAlert];
     }
 }
 
+
 - (IBAction)gnederSwitched:(id)sender {
-    
     if(_genderSwitch.isOn) {
         _genderLabel.text = @"Male";
     }
@@ -55,5 +53,12 @@
     }
 }
 
+
+- (void)showAlert {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Please Enter all the fields" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) { }];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
 
 @end

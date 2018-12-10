@@ -9,22 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "MobileTeamMember.h"
 
-@protocol AddTeamMemberDelegate <NSObject>
+@protocol addTeamMemberDelegate <NSObject>
 
-- (void) newMemberAdded:(MobileTeamMember *)member;
+- (void)newMemberAdded:(MobileTeamMember *)member;
 
 @end
 
+
 @interface AddViewController : UIViewController
 
-
-@property (weak, nonatomic) IBOutlet UITextField *firstName;
-@property (weak, nonatomic) IBOutlet UITextField *lastName;
-@property (weak, nonatomic) IBOutlet UISwitch *genderSwitch;
-@property (weak, nonatomic) IBOutlet UILabel *genderLabel;
-@property (weak, nonatomic) IBOutlet UIDatePicker *DOB;
-
-@property (nonatomic) id<AddTeamMemberDelegate> delegate;
+@property (weak, nonatomic) id<addTeamMemberDelegate> delegate;
 
 @end
 

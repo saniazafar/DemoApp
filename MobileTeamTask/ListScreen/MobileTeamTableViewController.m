@@ -10,7 +10,7 @@
 #import "AddViewController.h"
 #import "DetailViewController.h"
 
-@interface MobileTeamTableViewController () <AddTeamMemberDelegate, UpdateMemberDelegate>
+@interface MobileTeamTableViewController () <addTeamMemberDelegate, UpdateMemberDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *addBtn;
 @property (nonatomic, retain) NSMutableArray *mobileTeamArray;
@@ -106,7 +106,7 @@
 }
 
 
-#pragma mark - AddTeamMemberDelegate
+#pragma mark - addTeamMemberDelegate
 
 - (void)newMemberAdded:(MobileTeamMember *)member {
     [self.mobileTeamArray addObject:member];
