@@ -67,23 +67,63 @@
 		1A8839CC21BCEDD20048EE45 /* MobileTeamTask */ = {
 			isa = PBXGroup;
 			children = (
-				1A8839CD21BCEDD20048EE45 /* AppDelegate.h */,
-				1A8839CE21BCEDD20048EE45 /* AppDelegate.m */,
+				A519721221BE75240044F52C /* AppDelegate */,
+				A519721021BE74F30044F52C /* Model */,
+				A519721321BE754F0044F52C /* ListScreen */,
+				A519721421BE756D0044F52C /* Details */,
+				A519721121BE750B0044F52C /* Resource */,
 				1A8839D021BCEDD20048EE45 /* AddViewController.h */,
 				1A8839D121BCEDD20048EE45 /* AddViewController.m */,
-				1A8839D321BCEDD20048EE45 /* Main.storyboard */,
-				1A883A1121BE53EF0048EE45 /* DetailViewController.h */,
-				1A883A1221BE53EF0048EE45 /* DetailViewController.m */,
-				1A8839E921BD3AA30048EE45 /* MobileTeamMember.h */,
-				1A8839EA21BD3AA30048EE45 /* MobileTeamMember.m */,
-				1A8839E321BCEEA50048EE45 /* MobileTeamTableViewController.h */,
-				1A8839E421BCEEA50048EE45 /* MobileTeamTableViewController.m */,
 				1A8839D621BCEDD20048EE45 /* Assets.xcassets */,
 				1A8839D821BCEDD20048EE45 /* LaunchScreen.storyboard */,
 				1A8839DB21BCEDD20048EE45 /* Info.plist */,
 				1A8839DC21BCEDD20048EE45 /* main.m */,
 			);
 			path = MobileTeamTask;
+			sourceTree = "<group>";
+		};
+		A519721021BE74F30044F52C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1A8839E921BD3AA30048EE45 /* MobileTeamMember.h */,
+				1A8839EA21BD3AA30048EE45 /* MobileTeamMember.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A519721121BE750B0044F52C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				1A8839D321BCEDD20048EE45 /* Main.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		A519721221BE75240044F52C /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1A8839CD21BCEDD20048EE45 /* AppDelegate.h */,
+				1A8839CE21BCEDD20048EE45 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A519721321BE754F0044F52C /* ListScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1A8839E321BCEEA50048EE45 /* MobileTeamTableViewController.h */,
+				1A8839E421BCEEA50048EE45 /* MobileTeamTableViewController.m */,
+			);
+			path = ListScreen;
+			sourceTree = "<group>";
+		};
+		A519721421BE756D0044F52C /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				1A883A1121BE53EF0048EE45 /* DetailViewController.h */,
+				1A883A1221BE53EF0048EE45 /* DetailViewController.m */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +344,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 26GZ63PU38;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MobileTeamTask/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -321,7 +361,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 26GZ63PU38;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MobileTeamTask/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

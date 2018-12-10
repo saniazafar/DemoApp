@@ -11,8 +11,10 @@
 
 @interface MobileTeamMember : NSObject
 
-@property (nonatomic) NSString *name;
-@property (nonatomic) NSString *genderAndDob;
+- (void)setTeamMember:(NSString *)name withGender:(NSString *)gender DateofBirth:(NSString *)dob;
+- (NSString *)getMemberName;
+- (NSString *)getMemberGender;
+- (NSString *)getMemberDOB;
 
 @end
 

@@ -26,11 +26,11 @@
         NSLog(@"%@ bb ", self.DOB.date);
 
         MobileTeamMember *teamMember = [[MobileTeamMember alloc] init];
-        teamMember.name = [_firstName.text stringByAppendingString:_lastName.text];
+        //teamMember.name = [_firstName.text stringByAppendingString:_lastName.text];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"dd MMM yyyy"];
         NSString *dateString = [dateFormatter stringFromDate:_DOB.date];
-        teamMember.genderAndDob = [_genderLabel.text stringByAppendingString:dateString];
+        //teamMember.genderAndDob = [_genderLabel.text stringByAppendingString:dateString];
         [self.delegate newMemberAdded:teamMember];
          
         
