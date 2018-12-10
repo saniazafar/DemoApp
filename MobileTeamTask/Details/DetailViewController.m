@@ -37,7 +37,22 @@
 
 
 - (void)setDefaultDataForEdit {
-    //TODO:  assign teamMember to UI elements
+    NSString *nameString = [_teamMember getMemberName];
+    NSArray *splittedNameString = [nameString componentsSeparatedByString:@" "];
+    _firstName.text = splittedNameString[0];
+    _lastName.text = splittedNameString[1];
+    NSString *gender = [_teamMember getMemberGender];
+    if([gender  isEqualToString: @"Male"]) {
+        [_genderSwitch setOn:YES];
+    }
+    else if([gender isEqualToString:@"Female"]) {
+        [_genderSwitch setOn:NO];
+    }
+    _genderLabel.text = gender;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"dd MMM yyyy"];
+    NSDate *date = [dateFormatter dateFromString:[_teamMember getMemberDOB]];
+    [_DOB setDate:date];
 }
 
 
