@@ -1,29 +1,33 @@
 //
-//  DetailViewController.h
+//  ViewController.h
 //  MobileTeamTask
 //
-//  Created by Sania Zafar on 12/10/18.
+//  Created by Sania Zafar on 12/9/18.
 //  Copyright © 2018 Sania Zafar. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "MobileTeamMember.h"
 
-@protocol UpdateMemberDelegate <NSObject>
+typedef enum DetailViewScreenType {
+    Add,
+    Update,
+} DetailViewType;
 
-- (void) updateMember:(MobileTeamMember *)member index:(NSInteger)rowIndex;
+
+@protocol DetailViewControllerDelegate <NSObject>
+
+- (void)newMemberAdded:(MobileTeamMember *)member;
+- (void)updateMemberAdded:(MobileTeamMember *)member;
 
 @end
+
 
 @interface DetailViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UITextField *DOBTextField;
-
-@property (nonatomic) MobileTeamMember *teamMember;
-@property (nonatomic) id<UpdateMemberDelegate> updateDelegate;
-@property (nonatomic) NSInteger selectedRowIndex;
+@property (strong, nonatomic) MobileTeamMember *teamMember;
+@property (weak, nonatomic) id<DetailViewControllerDelegate> delegate;
+@property (assign) DetailViewType viewType;
 
 @end
-
 

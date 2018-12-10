@@ -7,13 +7,13 @@
 //
 
 #import "MobileTeamTableViewController.h"
-#import "AddViewController.h"
 #import "DetailViewController.h"
 
-@interface MobileTeamTableViewController () <addTeamMemberDelegate, UpdateMemberDelegate>
+@interface MobileTeamTableViewController () <DetailViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *addBtn;
 @property (nonatomic, retain) NSMutableArray *mobileTeamArray;
+@property (assign, nonatomic) NSInteger lastSelectedRowIndex;
 
 @end
 
@@ -76,10 +76,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    DetailViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"detailViewController"];
+    DetailViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
     detailViewController.teamMember = [self.mobileTeamArray objectAtIndex:indexPath.row];
-    detailViewController.selectedRowIndex = indexPath.row;
-    detailViewController.updateDelegate = self;
+    self.lastSelectedRowIndex = indexPath.row;
+    detailViewController.delegate = self;
+    detailViewController.viewType = Update;
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
@@ -100,13 +101,14 @@
 
 - (IBAction)addTeamMember:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    AddViewController *addViewController = [storyboard instantiateViewControllerWithIdentifier:@"addViewController"];
-    addViewController.delegate = self;
-    [self.navigationController pushViewController:addViewController animated:YES];
+    DetailViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    detailViewController.delegate = self;
+    detailViewController.viewType = Add;
+    [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 
-#pragma mark - addTeamMemberDelegate
+#pragma mark - DetailViewControllerDelegate
 
 - (void)newMemberAdded:(MobileTeamMember *)member {
     [self.mobileTeamArray addObject:member];
@@ -115,10 +117,8 @@
 }
 
 
-#pragma mark - UpdateMemberDelegate
-
-- (void)updateMember:(MobileTeamMember *)member index:(NSInteger)rowIndex{
-    [self.mobileTeamArray replaceObjectAtIndex:rowIndex withObject:member];
+- (void)updateMemberAdded:(MobileTeamMember *)member {
+    [self.mobileTeamArray replaceObjectAtIndex:self.lastSelectedRowIndex withObject:member];
     [self.tableView reloadData];
     [self.navigationController popViewControllerAnimated:YES];
 }
