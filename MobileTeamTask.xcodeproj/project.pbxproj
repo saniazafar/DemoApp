@@ -15,6 +15,7 @@
 		1A8839DD21BCEDD20048EE45 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8839DC21BCEDD20048EE45 /* main.m */; };
 		1A8839E521BCEEA50048EE45 /* MobileTeamTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8839E421BCEEA50048EE45 /* MobileTeamTableViewController.m */; };
 		1A8839EB21BD3AA30048EE45 /* MobileTeamMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8839EA21BD3AA30048EE45 /* MobileTeamMember.m */; };
+		1A883A1321BE53EF0048EE45 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A883A1221BE53EF0048EE45 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		1A8839E421BCEEA50048EE45 /* MobileTeamTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileTeamTableViewController.m; sourceTree = "<group>"; };
 		1A8839E921BD3AA30048EE45 /* MobileTeamMember.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MobileTeamMember.h; sourceTree = "<group>"; };
 		1A8839EA21BD3AA30048EE45 /* MobileTeamMember.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileTeamMember.m; sourceTree = "<group>"; };
+		1A883A1121BE53EF0048EE45 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		1A883A1221BE53EF0048EE45 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,8 @@
 				1A8839D021BCEDD20048EE45 /* AddViewController.h */,
 				1A8839D121BCEDD20048EE45 /* AddViewController.m */,
 				1A8839D321BCEDD20048EE45 /* Main.storyboard */,
+				1A883A1121BE53EF0048EE45 /* DetailViewController.h */,
+				1A883A1221BE53EF0048EE45 /* DetailViewController.m */,
 				1A8839E921BD3AA30048EE45 /* MobileTeamMember.h */,
 				1A8839EA21BD3AA30048EE45 /* MobileTeamMember.m */,
 				1A8839E321BCEEA50048EE45 /* MobileTeamTableViewController.h */,
@@ -156,6 +161,7 @@
 				1A8839DD21BCEDD20048EE45 /* main.m in Sources */,
 				1A8839CF21BCEDD20048EE45 /* AppDelegate.m in Sources */,
 				1A8839EB21BD3AA30048EE45 /* MobileTeamMember.m in Sources */,
+				1A883A1321BE53EF0048EE45 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

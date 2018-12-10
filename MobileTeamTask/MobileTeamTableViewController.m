@@ -9,10 +9,11 @@
 #import "MobileTeamTableViewController.h"
 #import "MobileTeamTableViewCell.h"
 #import "AddViewController.h"
+#import "DetailViewController.h"
 
 
 
-@interface MobileTeamTableViewController () <AddTeamMemberDelegate>
+@interface MobileTeamTableViewController () <AddTeamMemberDelegate, UpdateMemberDelegate>
 
 @end
 
@@ -27,8 +28,11 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-   
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+   // self.navigationItem.leftBarButtonItem.title = @"Edit";
+   // [self.tableView setEditing:NO animated:YES];
+    NSLog(@"%d",[self.tableView isEditing]);
+
     self.mobileTeamArray = [[NSMutableArray alloc] init];
     
     [self.tableView reloadData];
@@ -42,7 +46,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    
     return self.mobileTeamArray.count;
 }
 
@@ -57,25 +61,40 @@
 }
 
 
-/*
-// Override to support conditional editing of the table view.
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        MobileTeamMember *member = [mobileTeamArray objectAtIndex:indexPath.row];
+        [mobileTeamArray removeObject:member];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        //editingStyle = UITableViewCellEditingStyleNone;
+        NSLog(@"%d",[self isEditing]);
+        [self.tableView reloadData];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
+    else if(editingStyle == UITableViewCellEditingStyleNone) {
+        [self.tableView setEditing:NO animated:YES];
+    }
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DetailViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"detailViewController"];
+    MobileTeamMember *member = [mobileTeamArray objectAtIndex:indexPath.row];
+    detailViewController.teamMember = member;
+    detailViewController.selectedRowIndex = indexPath.row;
+    detailViewController.updateDelegate = self;
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
 
 /*
 // Override to support rearranging the table view.
@@ -115,6 +134,30 @@
     [mobileTeamArray addObject:member];
     [self.tableView reloadData];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)updateMember:(MobileTeamMember *)member index:(NSInteger)rowIndex{
+    NSLog(@"mem %@", member.genderAndDob);
+    [mobileTeamArray replaceObjectAtIndex:rowIndex withObject:member];
+//    MobileTeamMember *teamMember = [mobileTeamArray objectAtIndex:rowIndex];
+//    teamMember = member;
+//    NSLog(@"mem %@", teamMember.genderAndDob);
+    [self.tableView reloadData];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    
+    [self.tableView setEditing:editing animated:animated];
+    
+    if([self.tableView isEditing]) {
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+    }
+    else {
+        self.navigationItem.rightBarButtonItem.enabled = YES;
+    }
 }
 
 @end
