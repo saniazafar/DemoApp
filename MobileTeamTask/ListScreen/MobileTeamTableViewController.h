@@ -10,7 +10,7 @@
 #import "MobileTeamMember.h"
 
 
-@interface MobileTeamTableViewController : UITableViewController
+@interface MobileTeamTableViewController : UIViewController
 
 @end
 

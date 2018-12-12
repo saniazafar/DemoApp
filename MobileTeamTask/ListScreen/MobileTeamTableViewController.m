@@ -9,11 +9,12 @@
 #import "MobileTeamTableViewController.h"
 #import "DetailViewController.h"
 
-@interface MobileTeamTableViewController () <DetailViewControllerDelegate>
+@interface MobileTeamTableViewController () <DetailViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UIButton *addBtn;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addBtn;
 @property (nonatomic, retain) NSMutableArray *mobileTeamArray;
 @property (assign, nonatomic) NSInteger lastSelectedRowIndex;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -24,6 +25,8 @@
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     self.mobileTeamArray = [[NSMutableArray alloc] init];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 }
 
 

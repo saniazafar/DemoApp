@@ -24,13 +24,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.rightBarButtonItem.title = @"Add";
+    self.navigationItem.rightBarButtonItem.action = @selector(addMe:);
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     if (self.viewType == Update) {
-        [self.actionButton setTitle:@"Update" forState:UIControlStateNormal];
+        self.navigationItem.rightBarButtonItem.title = @"Update";
         [self setDefaultDataForEdit];
     }
 }
